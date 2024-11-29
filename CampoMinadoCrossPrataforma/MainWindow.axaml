@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+        x:Class="CampoMinadoCrossPrataforma.MainWindow"
+        Width="600" Height="600"
+        MinWidth="600" MinHeight="600"
+        Title="CampoMinadoCrossPrataforma">
+    
+    <Window.Styles>
+        <Style Selector="Rectangle.lightGreen">
+            <Setter Property="Fill" Value="#AAD751"/>
+        </Style>
+        <Style Selector="Rectangle.darkGreen">
+            <Setter Property="Fill" Value="#A2D149"/>
+        </Style>
+        <Style Selector="#CampoComMinas Rectangle:pointerover">
+            <Setter Property="Fill" Value="red"/>
+        </Style>
+    </Window.Styles>
+    
+    <Grid RowDefinitions="* Auto">
+        <Canvas Name="CampoComMinas" Grid.Row="0" Width="600" Height="600">
+            
+        </Canvas>
+        <Border Grid.Row="1" Padding="10" Background="#4C742C">
+            <Panel>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="Pontuação: |" VerticalAlignment="Center"/>
+                    <TextBlock Text="Bandeiras: |" VerticalAlignment="Center"/>
+                    <TextBlock Text="Tempo: " VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
+                    <Button Content="Ranking" />
+                    <ComboBox SelectedIndex="0">
+                        <ComboBoxItem>Fácil</ComboBoxItem>
+                        <ComboBoxItem>Média</ComboBoxItem>
+                        <ComboBoxItem>Dificil</ComboBoxItem>
+                    </ComboBox>
+                    <Button Content="Reiniciar" />
+                </StackPanel>
+            </Panel>
+        </Border>
+    </Grid>
+</Window>
